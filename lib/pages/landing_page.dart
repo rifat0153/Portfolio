@@ -28,7 +28,23 @@ List<Widget> pageChildren = [
             color: Colors.white,
           ),
         ),
+        const Text(
+          'Always Looking for the next challenge',
+          style: TextStyle(
+            // fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
       ],
+    ),
+  ),
+  Expanded(
+    child: Container(
+      child: Image.asset(
+        'assets/images/lp_image.png',
+        fit: BoxFit.fill,
+      ),
     ),
   )
 ];
@@ -36,9 +52,12 @@ List<Widget> pageChildren = [
 class DesktopLanding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: pageChildren,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 100),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: pageChildren,
+      ),
     );
   }
 }
