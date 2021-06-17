@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/pages/landing_page.dart';
 import 'package:portfolio/widgets/navbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,8 +10,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: Get.height,
-        width: Get.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
@@ -24,6 +23,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Navbar(),
+            LandingPage(),
           ],
         ),
       ),
