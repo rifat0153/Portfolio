@@ -28,8 +28,9 @@ class DesktopNavbar extends StatefulWidget {
 }
 
 class _DesktopNavbarState extends State<DesktopNavbar> {
-  double widthBeforeHover = 15;
-  double widthAftereHover = 20;
+  double homeSize = 15;
+  double aboutSize = 15;
+  double contactSize = 15;
   double buttonSize = 15;
 
   @override
@@ -56,36 +57,81 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                     // Navigator.pushNamed(context, MyRoutes.homeRoute);
                     context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
                   },
-                  child: const Text(
-                    'Home',
-                    style: TextStyle(
-                      color: Colors.white,
+                  child: MouseRegion(
+                    onEnter: (_) {
+                      setState(() {
+                        homeSize = 20;
+                      });
+                    },
+                    onExit: (_) {
+                      setState(() {
+                        homeSize = 15;
+                      });
+                    },
+                    child: Text(
+                      'Home',
+                      style: TextStyle(
+                        fontSize: homeSize,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
-                    // Get.to(() => AboutPage());
-                    // Navigator.pushNamed(context, MyRoutes.aboutRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
+                    // Get.to(() => HomePage());
+                    // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
                   },
-                  child: const Text(
-                    'About Me',
-                    style: TextStyle(
-                      color: Colors.white,
+                  child: MouseRegion(
+                    onEnter: (_) {
+                      setState(() {
+                        aboutSize = 20;
+                      });
+                    },
+                    onExit: (_) {
+                      setState(() {
+                        aboutSize = 15;
+                      });
+                    },
+                    child: Text(
+                      'About',
+                      style: TextStyle(
+                        fontSize: aboutSize,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
-                const Text(
-                  'Contact',
-                  style: TextStyle(
-                    color: Colors.white,
+                const SizedBox(width: 16),
+                GestureDetector(
+                  onTap: () {
+                    // Get.to(() => HomePage());
+                    // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+                  },
+                  child: MouseRegion(
+                    onEnter: (_) {
+                      setState(() {
+                        contactSize = 20;
+                      });
+                    },
+                    onExit: (_) {
+                      setState(() {
+                        contactSize = 15;
+                      });
+                    },
+                    child: Text(
+                      'Contact',
+                      style: TextStyle(
+                        fontSize: contactSize,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(width: 8),
-                
+                const SizedBox(width: 16),
                 MouseRegion(
                   onEnter: (_) {
                     setState(() {

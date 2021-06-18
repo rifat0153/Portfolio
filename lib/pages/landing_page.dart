@@ -40,11 +40,26 @@ List<Widget> pageChildren(double width) => [
           ],
         ),
       ),
+      // Container(
+      //   width: width,
+      //   child: Image.asset(
+      //     'assets/images/lp_image.png',
+      //     fit: BoxFit.fill,
+      //   ),
+      // )
       Container(
         width: width,
-        child: Image.asset(
-          'assets/images/lp_image.png',
-          fit: BoxFit.fill,
+        child: Row(
+          children: [
+            Expanded(
+                child: Image.asset(
+              'assets/images/ios_android.png',
+              fit: BoxFit.cover,
+            )),
+            Expanded(
+              child: Image.asset('assets/images/web.png'),
+            ),
+          ],
         ),
       )
     ];
