@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:portfolio/pages/landing_page.dart';
 import 'package:portfolio/widgets/navbar_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class AboutPage extends StatelessWidget {
+  const AboutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Navbar(),
-            LandingPage(),
+            Text('About Me'),
+            // LandingPage(),
             Spacer(),
           ],
         ),

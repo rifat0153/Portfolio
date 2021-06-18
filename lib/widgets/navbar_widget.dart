@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/main.dart';
+import 'package:portfolio/pages/about_page.dart';
+import 'package:portfolio/pages/home_page.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Navbar extends StatelessWidget {
   @override
@@ -17,7 +22,16 @@ class Navbar extends StatelessWidget {
   }
 }
 
-class DesktopNavbar extends StatelessWidget {
+class DesktopNavbar extends StatefulWidget {
+  @override
+  _DesktopNavbarState createState() => _DesktopNavbarState();
+}
+
+class _DesktopNavbarState extends State<DesktopNavbar> {
+  double widthBeforeHover = 15;
+  double widthAftereHover = 20;
+  double buttonSize = 15;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,17 +50,31 @@ class DesktopNavbar extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                const Text(
-                  'Home',
-                  style: TextStyle(
-                    color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    // Get.to(() => HomePage());
+                    // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+                  },
+                  child: const Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Text(
-                  'About Me',
-                  style: TextStyle(
-                    color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    // Get.to(() => AboutPage());
+                    // Navigator.pushNamed(context, MyRoutes.aboutRoute);
+                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
+                  },
+                  child: const Text(
+                    'About Me',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -57,14 +85,30 @@ class DesktopNavbar extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0)),
-                  color: Colors.pink,
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(color: Colors.white),
+                
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      buttonSize = 20;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      buttonSize = 15;
+                    });
+                  },
+                  child: MaterialButton(
+                    onPressed: () {},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    color: Colors.pink,
+                    child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: buttonSize,
+                      ),
+                    ),
                   ),
                 ),
               ],
