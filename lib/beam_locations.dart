@@ -7,14 +7,19 @@ class MyLocations extends BeamLocation {
   MyLocations(BeamState state) : super(state);
 
   @override
-  List<String> get pathBlueprints => ['/home'];
+  List<String> get pathBlueprints => ['/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         BeamPage(
-          key: const ValueKey('home'),
-          child: HomePage(),
+          key: const ValueKey('about1'),
+          child: AboutPage(),
         ),
+        if (state.uri.pathSegments.contains('home'))
+          BeamPage(
+            key: const ValueKey('home'),
+            child: HomePage(),
+          ),
         if (state.uri.pathSegments.contains('about'))
           BeamPage(
             key: const ValueKey('about'),

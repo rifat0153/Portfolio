@@ -21,18 +21,18 @@ class AboutPage extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Navbar(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
               child: Container(
-                color: Colors.white.withOpacity(0.05),
+                color: Colors.white.withOpacity(0.3),
                 child: EducationWidget(),
               ),
             ),
             // LandingPage(),
-            Spacer(),
+            // Spacer(),
           ],
         ),
       ),
@@ -46,7 +46,8 @@ class EducationWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
       child: Column(
-        children: [
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
           Text(
             'Education',
             style: largeWhiteBoldFont.copyWith(fontSize: 40),
@@ -54,7 +55,7 @@ class EducationWidget extends StatelessWidget {
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
+            children: <Widget>[
               RichText(
                 overflow: TextOverflow.ellipsis,
                 text: TextSpan(
@@ -84,6 +85,48 @@ class EducationWidget extends StatelessWidget {
               ),
             ],
           ),
+          Container(
+            height: 80,
+            // width: 200,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text('ML',
+                          style: largeWhiteBoldFont.copyWith(
+                              fontSize: 40, color: Colors.amber)),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text('CSS',
+                          style: largeWhiteBoldFont.copyWith(
+                              fontSize: 40, color: Colors.amber)),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text('AI',
+                          style: largeWhiteBoldFont.copyWith(
+                              fontSize: 40, color: Colors.amber)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
