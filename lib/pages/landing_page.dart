@@ -22,7 +22,7 @@ List<Widget> pageChildren(double width) => [
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Mobile Application\nDevelopers',
+              'Flutter\nDeveloper',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 35,
@@ -53,11 +53,11 @@ List<Widget> pageChildren(double width) => [
           children: [
             Expanded(
                 child: Image.asset(
-              'assets/images/ios_android.png',
+              'images/android_ios.png',
               fit: BoxFit.cover,
             )),
             Expanded(
-              child: Image.asset('assets/images/web.png'),
+              child: Image.asset('images/web1.png'),
             ),
           ],
         ),

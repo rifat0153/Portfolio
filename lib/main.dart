@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
 
       routeInformationParser: VxInformationParser(),
       routerDelegate: VxNavigator(routes: {
-        '/': (_, __) => MaterialPage(child: HomePage()),
+        '/': (_, __) => MaterialPage(child: AboutPage()),
         MyRoutes.homeRoute: (_, __) => MaterialPage(child: HomePage()),
         MyRoutes.aboutRoute: (_, __) => const MaterialPage(child: AboutPage()),
         MyRoutes.contactRoute: (_, __) => MaterialPage(child: HomePage()),

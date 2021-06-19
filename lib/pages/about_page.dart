@@ -24,7 +24,13 @@ class AboutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Navbar(),
-            Text('About Me'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              child: Container(
+                color: Colors.white.withOpacity(0.05),
+                child: EducationWidget(),
+              ),
+            ),
             // LandingPage(),
             Spacer(),
           ],
@@ -33,3 +39,63 @@ class AboutPage extends StatelessWidget {
     );
   }
 }
+
+class EducationWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+      child: Column(
+        children: [
+          Text(
+            'Education',
+            style: largeWhiteBoldFont.copyWith(fontSize: 40),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RichText(
+                overflow: TextOverflow.ellipsis,
+                text: TextSpan(
+                  children: [
+                    const WidgetSpan(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        ),
+                      ),
+                    ),
+                    TextSpan(
+                        text: ' North South University',
+                        style: largeWhiteBoldFont),
+                    TextSpan(
+                        text: '\nBSc, Computer Science', style: largeWhiteFont),
+                  ],
+                ),
+              ),
+              Text(
+                '2016/2020',
+                // textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: largeWhiteFont,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+var largeWhiteBoldFont = const TextStyle(
+  color: Colors.white,
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
+var largeWhiteFont = const TextStyle(
+  color: Colors.white,
+  fontSize: 20,
+);

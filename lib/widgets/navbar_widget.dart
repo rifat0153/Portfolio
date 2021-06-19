@@ -82,7 +82,7 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                   onTap: () {
                     // Get.to(() => HomePage());
                     // Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
                   },
                   child: MouseRegion(
                     onEnter: (_) {
@@ -109,7 +109,7 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                   onTap: () {
                     // Get.to(() => HomePage());
                     // Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
                   },
                   child: MouseRegion(
                     onEnter: (_) {
