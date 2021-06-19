@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:portfolio/main.dart';
-import 'package:portfolio/pages/about_page.dart';
-import 'package:portfolio/pages/home_page.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:beamer/beamer.dart';
 
 class Navbar extends StatelessWidget {
   @override
@@ -53,9 +50,7 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    // Get.to(() => HomePage());
-                    // Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+                    context.beamToNamed('/home');
                   },
                   child: MouseRegion(
                     onEnter: (_) {
@@ -80,9 +75,7 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                 const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
-                    // Get.to(() => HomePage());
-                    // Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
+                    context.beamToNamed('/about');
                   },
                   child: MouseRegion(
                     onEnter: (_) {
@@ -109,7 +102,7 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                   onTap: () {
                     // Get.to(() => HomePage());
                     // Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    context.vxNav.push(Uri.parse(MyRoutes.aboutRoute));
+                    context.beamToNamed('/contact');
                   },
                   child: MouseRegion(
                     onEnter: (_) {

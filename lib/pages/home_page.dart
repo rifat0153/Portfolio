@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/pages/landing_page.dart';
